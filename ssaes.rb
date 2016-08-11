@@ -1,5 +1,4 @@
 require 'sinatra'
-require 'sinatra/cross_origin'
 require 'sinatra/base'
 
 class Ssaes < Sinatra::Base
@@ -15,6 +14,6 @@ class Ssaes < Sinatra::Base
 	end
 
 	get '/' do
-                'It\'s Working !!!'
+                'Its Working !!!'
         end
 end
