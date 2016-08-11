@@ -1,0 +1,46 @@
+<html ng-app="myApp">
+  <head>
+    <title> Sinatra + Sidekiq + AngularJS + ERB + SmoothieChart </title>
+    <meta name="viewport" content="width=device-width">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap-theme.css">
+    <script src="angular/angular.js"></script>
+    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothie/1.27.0/smoothie.min.js"></script>
+  </head>
+    <body class="container-fluid" ng-controller="mainCtrl">
+	<h3> Sinatra + Sidekiq + AngularJS + ERB + SmoothieChart </h3>
+  	<div class="alert alert-warning alert-dismissible" role="alert">
+        	<strong>Desc!</strong>
+        	Esta app tem o objetivo de mostrar o funcionamento das seguintes tecnologias: Ruby, Sinatra, ERB Templates, AngularJS, SmoothieChart, Sidekiq e Redis
+        	<br />
+        	<strong>Comportamento: A app tem o objetivo de criar um arquivo no FS do servidor no path: '/tmp/teste'</strong>
+  	</div>
+
+  	<h4> Estado do Sidekiq </h4>
+  	<div>
+        	<p> Processados </p>
+        	<canvas id="smoothie-chart" width="800" height="100">
+  	</div>
+
+  	<div>
+        	<p> Na fila </p>
+        	<canvas id="smoothie-chart2" width="800" height="100">
+  	</div>
+
+  	<h5> Criar arquivo </h5>
+  	<div class="input-group">
+        	<span class="input-group-addon" id="basic-addon3"> fs://tmp/teste</span>
+        	<input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" ng-model="msg">
+  	</div>
+  	<br />
+  	<input type="button" class="btn btn-success" aria-describedby="basic-addon3" value="Criar arquivo" ng-click="Criar()">
+
+  	<h5>Listagem de arquivos no path: fs://tmp/teste </h5>
+  	<div class="list-group">
+        	<button style="font-size: 10px" type="button" class="list-group-item" ng-repeat="data in retorno"> {{ data }} </button>
+  	</div>
+    </body>
+</html>
