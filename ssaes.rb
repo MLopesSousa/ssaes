@@ -9,11 +9,8 @@ class Ssaes < Sinatra::Base
         	set :allow_methods, [:get, :post, :put, :delete]
 	end
 
-	get '/ssaes' do
+	get '/' do
   		erb :index
 	end
 
-	get '/' do
-                'Its Working !!!'
-        end
 end
