@@ -15,6 +15,6 @@ class Ssaes < Sinatra::Base
 	end
 
 	get '/' do
-                'It's Working !!!'
+                'It\'s Working !!!'
         end
 end
