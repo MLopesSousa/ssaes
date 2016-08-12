@@ -33,7 +33,7 @@ myApp.controller('mainCtrl', function($scope, $timeout, $http){
       			$scope.retorno = r.data;
       			$timeout(poller, 1000);
     		}).error(function(){
-    			document.getElementById('alert-field').appendChild("<div class="alert alert-warning alert-dismissible" role="alert"> Erro ao acessar: http://172.30.121.230:4568/api/list </div>");	
+    			document.getElementById('alert-field').appendChild('<div class="alert alert-warning alert-dismissible" role="warn"> Erro ao acessar: http://172.30.121.230:4568/api/list </div>');	
     		});
     
   	};
@@ -47,7 +47,7 @@ myApp.controller('mainCtrl', function($scope, $timeout, $http){
 			series.append(new Date().getTime(), $scope.status.processed);
                         $timeout(poller2, 5000);
                 }).error(function(){
-    			document.getElementById('alert-field').appendChild("<div class="alert alert-warning alert-dismissible" role="alert"> Erro ao acessar: http://172.30.121.230:4568/api/status </div>");	
+    			document.getElementById('alert-field').appendChild('<div class="alert alert-warning alert-dismissible" role="warn"> Erro ao acessar: http://172.30.121.230:4568/api/status </div>"');	
     		});
 
         };
